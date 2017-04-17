@@ -1,12 +1,16 @@
 ﻿body {
-    padding-top: 50px;
-    padding-bottom: 20px;
+    /*padding-top: 50px;*/
+    /*padding-bottom: 20px;*/
 }
 
 /* Set padding to keep content from hitting the edges */
 .body-content {
     padding-left: 15px;
     padding-right: 15px;
+}
+.Content {
+    flex: 1 0 auto;
+    margin-bottom: 15px;
 }
 
 /* Override the default bootstrap behavior where horizontal description lists 
@@ -15,10 +19,102 @@
 .dl-horizontal dt {
     white-space: normal;
 }
+.full {
+    position:absolute;
+    display:grid;
+    right: 0;
+    left: 0;
+    z-index: 1030;
+    padding-right: 0;
+    padding-left: 0;
+    top: 0;
+    border-width: 0 0 1px;
+    height: auto;
+}
 
 /* Set width on the form input elements since they're 100% wide by default */
 input,
 select,
 textarea {
     max-width: 280px;
+}
+
+/* Carousel */
+.carousel-caption p {
+    font-size: 20px;
+    line-height: 1.4;
+}
+
+/* buttons and links extension to use brackets: [ click me ] */
+.btn-bracketed::before {
+    display: inline-block;
+    content: "[";
+    padding-right: 0.5em;
+}
+
+.btn-bracketed::after {
+    display: inline-block;
+    content: "]";
+    padding-left: 0.5em;
+}
+
+/* Make .svg files in the carousel display properly in older browsers */
+.carousel-inner .item img[src$=".svg"] {
+    width: 100%;
+}
+
+footer {
+    flex: none;
+    color: white;
+}
+
+.footerUp {
+    padding-bottom: 26px;
+    background: #008cba;
+    border-color: #006687;
+}
+
+.footerDown {
+    background: #0e0e0e;
+}
+
+.footerDown p {
+        margin: 16px 0px;
+    }
+
+footer a {
+    color: #cecaca;
+}
+
+footer a:hover, footer a:focus {
+        color: #fff;
+    }
+
+footer h4 {
+    margin-top: 32px;
+}
+
+.latestPosts li:not(:last-child) {
+    border-bottom: 1px dotted #fff;
+    padding-bottom: 5px;
+    margin-bottom: 5px;
+}
+@media (min-width: 768px) {
+   
+  .full  {
+        border-radius: 0;
+    }
+}
+
+@media (max-device-width: 480px) and (orientation: landscape) {
+    .full {
+        height:auto;
+    }
+}
+/* Hide/rearrange for smaller screens */
+@media screen and (max-width: 767px) {
+    /* Hide captions */
+    .carousel-caption {
+        display: none
+    }
 }
